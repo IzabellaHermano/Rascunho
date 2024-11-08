@@ -18,6 +18,7 @@ public class cadastro05 {
         int contadorAlunos = 0;
         int contadorCoordenadores = 0;
         boolean sair = false;
+
         do {
             System.out.println("Escolha uma opção:");
             System.out.println("1. Cadastro");
