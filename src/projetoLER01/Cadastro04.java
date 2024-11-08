@@ -1,6 +1,8 @@
+package projetoLER01;
+
 import java.util.Scanner;
 
-public class tentativa01 {
+public class Cadastro04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -9,7 +11,7 @@ public class tentativa01 {
         String[] nomeAlunos = new String[maxAlunos];
         String[] matriculaAlunos = new String[maxAlunos];
         int[] codUsuarios = new int[maxAlunos];
-        String nomeAQV;
+        String nomeAQV = null;
         String matriculaAQV;
         String[] nomesCoor = new String[maxCoordenadores];
         String[] matriculaCoor = new String[maxCoordenadores];
@@ -17,6 +19,7 @@ public class tentativa01 {
         int codUsuarioAtual = 1, contadorAlunos = 0, contadorCoor = 0;
         boolean sair = false;
 
+        boolean sairCadastro = false;
         do {
             System.out.println("Menu:");
             System.out.println("1. Cadastro");
@@ -54,7 +57,7 @@ public class tentativa01 {
                 case 3:
                     if (contadorCoor < maxCoordenadores) {
                         System.out.print("Nome do Coordenador:");
-                        nomesCoor[contadorCoor] + scanner.nextLine();
+                        String string = nomesCoor[contadorCoor] + scanner.nextLine();
                         contadorCoor++;
                     } else {
                         System.out.println("Limite de Cordenadores cadastrados atingidos.");
@@ -65,22 +68,44 @@ public class tentativa01 {
                     break;
                 default:
                     System.out.println("Opção inválida. \n Tente novamente");
+                    break;
             }
-        }while (!sairCdastro);
-        break;
-        case 2:
-        System.out.println("Lista de Alunos Cadastrados: ");
-        for (int i = 0; i < contadorAlunos; i++){
-            System.out.println("Aluno " + (i+1) + ":");
-            System.out.println("Nome: " nomeAlunos[i]);
-            System.out.println("Matrícula:" + matriculaAlunos [i]);
-            System.out.println("Código de Usuário:" + codUsuarios[i]);
-        }
-        break;
-        case 3:
-        System.out.print("Informe o nome ou numero de matricula do aluno para buscar: " );
-        String busca = scanner.nextLine();
+        } while (sairCadastro);
+        int buscar = scanner.nextInt();
+        scanner.nextLine();
+        boolean encontrado = false;
+        switch (buscar) {
 
+            case 2:
+                System.out.println("Lista de Alunos Cadastrados: ");
+                for (int i = 0; i < contadorAlunos; i++) {
+                    System.out.println("Aluno " + (i + 1) + ":");
+                    System.out.println("Nome: " + nomeAlunos[i]);
+                    System.out.println("Matrícula:" + matriculaAlunos[i]);
+                    System.out.println("Código de Usuário:" + codUsuarios[i]);
+                    break;
+                }
+            case 3:
+                System.out.print("Informe o nome ou numero de matricula do aluno para buscar: ");
+                String busca = scanner.nextLine();
+                encontrado = false;
+
+                for (int i = 0; i < contadorAlunos; i++) ;
+                int i = 0;
+                if (nomeAlunos[i].equalsIgnoreCase(busca) || matriculaAlunos[i].equalsIgnoreCase(busca)) ;
+                System.out.println("Aluno Encontrado:");
+                System.out.println("Nome: " + nomeAlunos[i]);
+                System.out.println("Matricula:" + matriculaAlunos[i]);
+                System.out.println("Código de Usuário: " + codUsuarios[i]);
+                encontrado = true;
+                break;
         }
+        if (!encontrado) {
+            System.out.println("Aluno não encontrado.");
+        }
+
 
     }
+
+}
+
