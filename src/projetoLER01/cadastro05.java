@@ -14,7 +14,6 @@ public class cadastro05 {
         String matriculaAQV = null;
         String[] nomesCoordenadores = new String[maxCoordenadores];
         String[] matriculasCoordenadores = new String[maxCoordenadores];
-        // Variáveis auxiliares
         int codigoUsuarioAtual = 1;
         int contadorAlunos = 0;
         int contadorCoordenadores = 0;
@@ -29,7 +28,6 @@ public class cadastro05 {
             scanner.nextLine(); // Limpa o buffer do scanner
             switch (opcao) {
                 case 1:
-                    // Submenu de Cadastro
                     boolean sairCadastro = false;
                     do {
                         System.out.println("Escolha uma opção de cadastro:");
@@ -41,7 +39,6 @@ public class cadastro05 {
                         scanner.nextLine(); // Limpa o buffer
                         switch (opcaoCadastro) {
                             case 1:
-                                // Cadastro de aluno
                                 if (contadorAlunos < maxAlunos) {
                                     System.out.print("Nome do Aluno: ");
                                     nomesAlunos[contadorAlunos] = scanner.nextLine();
@@ -54,7 +51,6 @@ public class cadastro05 {
                                 }
                                 break;
                             case 2:
-                                // Cadastro de AQV
                                 if (nomeAQV == null) {
                                     System.out.print("Nome do AQV: ");
                                     nomeAQV = scanner.nextLine();
@@ -65,7 +61,6 @@ public class cadastro05 {
                                 }
                                 break;
                             case 3:
-                                // Cadastro de Coordenador
                                 if (contadorCoordenadores < maxCoordenadores) {
                                     System.out.print("Nome do Coordenador: ");
                                     nomesCoordenadores[contadorCoordenadores] = scanner.nextLine();
@@ -85,7 +80,6 @@ public class cadastro05 {
                     } while (!sairCadastro);
                     break;
                 case 2:
-                    // Listagem de alunos cadastrados
                     System.out.println("Lista de Alunos Cadastrados:");
                     for (int i = 0; i < contadorAlunos; i++) {
                         System.out.println("Aluno " + (i + 1) + ":");
@@ -95,7 +89,6 @@ public class cadastro05 {
                     }
                     break;
                 case 3:
-                    // Busca de aluno por nome ou matrícula
                     System.out.print("Digite o Nome ou Matrícula do Aluno para buscar: ");
                     String busca = scanner.nextLine();
                     boolean encontrado = false;
