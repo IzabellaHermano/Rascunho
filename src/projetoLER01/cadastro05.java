@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class cadastro05 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // Limite de cadastros de alunos, AQV e coordenadores
+
         int maxAlunos = 10;
         int maxCoordenadores = 2;
-        // Arrays para armazenar os dados
+
         String[] nomesAlunos = new String[maxAlunos];
         String[] matriculasAlunos = new String[maxAlunos];
         int[] codigosUsuarios = new int[maxAlunos];
@@ -26,7 +26,7 @@ public class cadastro05 {
             System.out.println("3. Buscar Aluno por Nome ou Matrícula");
             System.out.println("0. Sair");
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpa o buffer do scanner
+            scanner.nextLine();
             switch (opcao) {
                 case 1:
                     boolean sairCadastro = false;
@@ -37,7 +37,7 @@ public class cadastro05 {
                         System.out.println("3. Cadastrar Coordenador");
                         System.out.println("0. Voltar");
                         int opcaoCadastro = scanner.nextInt();
-                        scanner.nextLine(); // Limpa o buffer
+                        scanner.nextLine();
                         switch (opcaoCadastro) {
                             case 1:
                                 if (contadorAlunos < maxAlunos) {
